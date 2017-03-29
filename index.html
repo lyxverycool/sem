@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>薪福快线SaaS软件</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/sem.css"/>
+    <link rel="stylesheet" href="css/swiper-3.4.0.min.css"/>
+</head>
+<body> 
+    <div class="sem" ng-app="myApp" ng-controller="myCtrl">
+    	<div class="sem-container sem-top">
+    		<div class="sem-containers sem-tops" ng-click="goTalent()">
+    			<a target="_blank" href='http://www.talentspotgroup.com/cn/' ><img src="images/u21.png" alt="logo"></a>
+    			<a class="top-right" target="_blank" href='http://www.talentspotgroup.com/cn/'><span>薪福快线由“亚太最佳人力资源服务机构”Talent Spot倾力打造</span></a>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-header">
+    		<div class="sem-mask sem-mask-1">		
+    		</div>
+    		<div class="sem-container sem-header-top">
+    			<div class="sem-containers sem-headers-top">
+    				<div class="left list">
+    					<a target="_blank" href='http://www.cnbexpress.com/'><img src="images/u65.png" alt="logo"></a>
+    				</div>
+    				<div class="center list">
+    					咨询热线：4008-062-822
+    				</div>
+    				<div class="right list">
+    					<div class="login text-center" ng-click="goRegist()">
+    						登录
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="bottom swiper-container">
+    			<div class="swiper-wrapper">
+		    		<div class="sem-container swiper-slide sem-header-bottom">
+						<div class="sem-containers sem-headers-bottom">
+							<div class="bottom-1">
+								<div class="title1">首屈一指的云人力资源管理软件</div>
+								<div class="title2">资深专业的线下HR服务</div>
+							</div>
+							<div style="outline: none" class="bottom-2 text-center" ng-click="goTrial()">
+								免费体验
+							</div>
+							<div class="bottom-3">
+								<img src="images/u77.png" />
+							</div>
+							<div class="bottom-4">
+								<img src='images/u71.png'/>
+							</div>
+						</div>
+					</div>
+					<div class="sem-container swiper-slide sem-header-bottom">
+						<div class="sem-containers sem-headers-bottom">
+							<div class="bottom-1">
+								<div class="title1">相比传统HR软件</div>
+								<div class="title2">工作效率提升30倍 成本降低75%</div>
+							</div>
+							<div style="outline: none" class="bottom-2 text-center" ng-click="goTrial()">
+								免费体验
+							</div>
+							<div class="bottom-5">
+								<img src="images/u663.png" />
+							</div>
+						</div>
+					</div>	
+				</div>
+				  <div class="swiper-button-prev btn btn-left">
+				  	<img src="images/u569.png" alt="btn">
+				  </div>
+    			  <div class="swiper-button-next btn btn-right">
+    			  	<img src="images/u568.png" alt="btn">
+    			  </div>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-1">
+    		<div class="sem-containers sem-containers-1">
+    			<div class="list left">
+    				<video id="myVideo1" loop="loop" width="540" height="300" poster="images/video1.jpg">
+    					<source src="video/cnb.mp4" type="video/mp4"></source>
+    				</video>
+    				<div class="btn btn1" ng-click="videoPlay1()">
+    				</div>		
+    			</div>
+    			<div class="list right">
+    				<video id="myVideo2" loop="loop" width="540" height="300" poster="images/video2.jpg">
+    					<source src="video/interview.mp4" type="video/mp4"></source>
+    				</video>
+    				<div class="btn btn2" ng-click="videoPlay2()">
+    				</div>		
+    			</div>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-2">
+    		<div class="sem-containers sem-containers-2">
+    			<div class="top">
+    				全面解决企业人力资源管理难题
+    			</div>
+    			<div class="bottom">
+    				<div class="bottom-left list">
+    					<div class="text-1"><b>线上人力资源管理云平台</b></div>
+    					<div class="text-2"><b>快速、高效、准确</b></div>
+    					<div class="text-3">
+    						<b>从薪资核算开始，满足所有企业薪酬管理需求</b>
+    					</div>
+    					<div class="text-4" ng-click="firstScroll()">
+    						了解更多
+    					</div>
+    				</div>
+    				<div class="bottom-right list">
+    					<div class="text-1"><b>线下人力资源服务</b></div>
+    					<div class="text-2"><b>线下资深HR团队提供高效快速服务</b></div>
+    					<div class="text-3">
+    						<b>帮您摆脱事务性工作</b>
+    					</div>
+    					<div class="text-4" ng-click="secondScroll()">
+    						了解更多
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-3">
+    		<div class="sem-containers sem-containers-3">
+    			<div class="top">薪福快线助企业高度控本增效</div>
+    			<div class="bottom">
+    				<img src="images/u45.png" alt="不同">
+    			</div>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-4">
+    		<div class="sem-containers sem-containers-4">
+    			<div class="top">
+    				核心功能
+    			</div>
+    			<div class="center">
+    				<div class="text text-center" ng-repeat="core in cores" ng-click="coreClick($index)">
+    	                <img ng-src="{{core.img}}" />
+    	                <div class="text-title text-center">
+    	                        {{core.title}}
+    	                </div>
+    	            </div>
+    			</div>
+    			<div class="bottoms">
+    				<div class="bottom" ng-repeat="list in lists">
+    					<div class="bottom-left">
+    						<div class="text-1">{{list.title}}</div>
+    						<div class="text-2">
+    							<span class="title-2" ng-repeat="title2 in list.title2s">
+    								{{title2.line}}
+    							</span>
+    						</div>
+    						<div class="text-3">
+    							<div class="title-3" ng-repeat="title3 in list.title3s">
+    								{{title3.line}}
+    							</div>
+    						</div>
+    					</div>
+    					<div class="bottom-right">
+    						<img ng-src="{{list.img}}" />
+    					</div>
+    				</div>
+    			</div>	
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-5">
+    		<div class="sem-containers sem-containers-5">
+    			<div class="top">
+    				行业应用
+    			</div>
+    			<div class="center">
+    				无论您来自哪个行业，我们都有专家了解您行业所面临的特殊薪酬方面的挑战，帮您高效快速解决。以制造业、零售业、服务业、销售型企业为例
+    			</div>
+    			<div class="bottom">
+    				<div class="list" ng-repeat="work in works" ng-mouseenter="hov($index)" ng-mouseleave="leave($index)">
+    					<div class="list-1">
+    						<div class="list-1-top text-center">
+    							<div style="margin-top:0;" class="text">{{work.title1}}</div>
+    							<div class="text">{{work.title2}}</div>
+    						</div>
+    						<!-- <div class="list-1-bottom text-center">
+    							现状
+    						</div> -->
+    					</div>
+    					<div class="list-2">
+    						<div class="list-2-top text-center">
+    							<div style="margin-top:0;" class="text">{{work.title3}}</div>
+    							<div class="text">{{work.title4}}</div>
+    							<div class="text">{{work.title5}}</div>
+    							<div class="text">{{work.title6}}</div>
+    						</div>
+    						<div class="list-2-bottom text-center">
+    							薪福快线如何有效解决
+    						</div>
+    					</div>
+    				</div>
+    			</div>	
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-6">
+    		<div class="sem-containers sem-containers-6">
+    			<div class="top">线下社保代缴、工资代发、个税申报</div>
+    			<div class="bottom">
+    				<div class="bottom-left list">500+城市服务网络</div>
+    				<div class="bottom-right list">20+载人事外包服务经验</div>
+    			</div>
+    			<div class="bottom" style="margin-top:20px;">
+    				<div class="bottom-left list">200+专业薪酬外包顾问</div>
+    				<div class="bottom-right list">资金银行托管，安全无忧</div>
+    			</div>		
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-7">
+    		<div class="sem-containers sem-containers-7">
+    			<div class="top">为何选择 薪福快线</div>
+    			<div class="bottom">
+    				<div class="bottom-left">
+    					<div class="text">
+    						<span>20</span>
+    						多年人力资源外包实战经验
+    					</div>
+    					<div class="text">
+    						唯一由专业HR打造的HR管理平台，更关注HR体验
+    					</div>
+    					<div class="text">
+    						服务 <span>1000+</span>
+    						家行业标杆性客户
+    					</div>
+    					<div class="text">
+    						服务覆盖 <span>500</span>
+    						多个城市及亚太区 <span>8</span>
+    						个国家 
+    					</div>
+    					<div class="text">
+    						各种规模企业均可使用
+    					</div>
+    				</div>
+    				<div class="bottom-right">
+    					<img src="images/u434.png" alt="网址">
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-8">
+    		<div class="sem-containers sem-containers-8">	
+    			<div class="top">
+    				源于HR， 服务HR
+    			</div>
+    			<div class="bottom">
+    				<div class="list">
+    					<div class="list-top text-center">
+    						<img src="images/u392.png" alt="不同">
+    					</div>
+    					<div class="list-center text-center">创始人Chary Zhu</div>
+    					<div class="list-bottom">国内最早一批从事HR服务人员之一，扎根行业20年，拥有丰富的人力资源实战</div>				
+    				</div>
+    				<div class="list">
+    					<div class="list-top text-center">
+    						<img src="images/u399.png" alt="不同">
+						</div>
+						<div class="list-center text-center">人力资源专家Celine Zhang</div>
+						<div class="list-bottom">在HR领域共有18年工作经验，包括在第三方人力资源外包公司的10年工作经验
+                        </div>					
+    				</div>
+    				<div class="list" style="margin-right:0;">
+    					<div class="list-top text-center">
+    						<img src="images/u968.png" alt="不同">
+    					</div>
+    					<div class="list-center text-center">人力资源专家Jennie Li</div>
+    					<div class="list-bottom">在HR领域共有16年工作经验，包括在第三方人力资源外包公司的3年工作经验,500强企业5年HR工作经验</div>					
+    				</div>
+    			</div>
+    		</div>
+    		<div class="mask">
+    		</div>
+    	</div>	
+    	<div class="sem-container sem-container-9">
+    		<div class="sem-containers sem-containers-9">
+    			<div class="top">
+    				超千家标杆客户的共同选择
+    			</div>
+    	
+    				<div class="list row">
+    				    <ul class="partner list-inline text-left" ng-repeat="partnerArray in partners">
+    				        <li ng-repeat="partner in partnerArray">
+    				          <div ng-style="getImagePosition($parent.$index,$index)" role="button"></div>
+    				        </li>
+    				    </ul>
+        			</div>
+    			
+    			<div class="top">
+    				值得信赖的合作伙伴
+    			</div>	
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-10">
+    		<div class="sem-containers sem-containers-10">
+    			<div class="list">
+    				<div class="content">
+    					<div class="text">•&nbsp; 连续3年荣获“信得过人力资源服务机构”</div>
+    					<div class="text">•&nbsp; 2015—2016年HRoot“大中华区最佳人力资源服务机构评选”客户满意度大奖</div>
+    					<div class="text">•&nbsp; 2016年伯乐会“中国好伯乐”最佳人力资源供应商奖</div>  
+    					<div class="text">•&nbsp; 中国人力资源协会“副理事长”单位</div>  
+    					<div class="text">•&nbsp; 中国人力资源协会“副理事长”单位</div>  
+    					<div class="text">•&nbsp; 2016年中国人才服务行业协会“一带一路”、“亚太区”、“中国”人力资源推荐机构</div>     
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-11">
+    		<div class="sem-containers sem-containers-11">
+    			<div class="top">
+    				媒体报道
+    			</div>
+    			<div class="bottom">
+    				<a class="list text-center" target="_blank" href="http://money.china.com/fin/lc/201609/20/0778755.html">
+    					<img src="images/u453.png" alt="媒体">
+    				</a>
+    				<a class="list text-center" target="_blank" href="http://v.qq.com/x/page/t0330px3y2l.html">
+    					<img src="images/u1013.jpg" alt="媒体">
+    				</a>
+    				<a class="list text-center" target="_blank" href="http://toutiao.com/i6325990846621549058/?app=news_article&wxshare_count=2&pbid=23549558433">
+    					<img src="images/u1018.jpg" alt="媒体">
+    				</a>
+    				<a class="list text-center" target="_blank" href="http://www.jjgc.net/portal.php?mod=view&aid=1399" style="margin-right:0;">
+    					<img src="images/u1023.jpg" alt="媒体">
+    				</a>
+    			</div>
+    			<div class="bottom">
+    				<a class="list text-center" target="_blank" href="http://www.time-weekly.com/html/20161011/34808_1.html">
+    					<img src="images/u1028.jpg" alt="媒体">
+    				</a>
+    				<a class="list text-center" target="_blank" href="http://www.sootoo.com/content/666221.shtml">
+    					<img src="images/u1033.jpg" alt="媒体">
+    				</a>
+    				<a class="list text-center" target="_blank" href="http://news.sina.com.cn/o/2016-09-06/doc-ifxvqefm5653517.shtml">
+    					<img src="images/u1038.jpg" alt="媒体">
+    				</a>
+    				<a class="list text-center" target="_blank" href="http://3g.163.com/ntes/special/0034073A/wechat_article.html?docid=C06TFHOM0511A5R5&spst=0&spss=newsapp&spsf=wx&spsw=1" style="margin-right:0;">
+    					<img src="images/u1043.jpg" alt="媒体">
+    				</a>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-12">
+    		<div class="sem-containers sem-containers-12">
+    			<div class="top">
+    				成功案例分享
+    			</div>
+    			<div class="bottom">
+    				<div class="bottom-left">
+    					<img src="images/u495.png" alt="媒体">
+    				</div>
+    				<div class="bottom-right">
+    					<div class="list">
+    						<div class="title">客户痛点</div>
+    						<div class="text">
+    						<span>•</span>&nbsp; 在华分支机构多，员工分散各地，社保政策不一，调整困难</div>
+    						<div class="text"><span>•</span>&nbsp;
+    						员工档案、历史数据、信息繁多，月度调薪复杂度高，易出错
+    						</div>
+    						<div class="text"><span>•</span>&nbsp; 企业对信息保密度要求高
+    						</div>
+    					</div>
+    					<div class="list" style="margin-top:20px;">
+    						<div class="title">薪福快线如何解决客户痛点</div>
+    						<div class="text">
+    						<span>•</span>&nbsp; 平台支持薪酬、社保计算不出错（社保公积金、CPF、MPF基础数据智能更新，覆盖中国及亚太500+城市）</div>
+    						<div class="text"><span>•</span>&nbsp;
+    						平台功能全，可按需自定义，扩展无限，一个平台就搞定薪酬福利所有工作
+    						</div>
+    						<div class="text"><span>•</span>&nbsp; 平台所有工作云端服务器：运行双机、数据多机，高安全可靠。保密性强
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="sem-container sem-container-13">
+    		<div class="sem-containers sem-containers-13">
+    			<div class="text-1 text-center">
+    				联系我们：4008-062-822
+    			</div>
+    			<div class="text-2 text-center">
+    				您的专属企业平台，现在就开始体验吧
+    			</div>
+    			<div class="text-3">
+    	            <input ng-model="$parent.mobile" placeholder="输入手机号" maxlength="11"/>
+    	            <span class="btns text-center" ng-click="goLogin()">免费注册</span>
+    			</div>
+    		</div>
+    		<div class="mask">		
+    		</div>
+    	</div>
+    </div>
+    <section class="home_bottom">
+        <section class="top">
+        <div class="container" style="padding:38px 0;width: 1000px">
+        <div class="row text-center" style="margin:0;">
+          <div class="col-xs-6 text-left" style="padding-left:0;">
+            <ul class="list-unstyled contract">
+              <li class="title">联系我们</li>
+              <li class="right-content" style="font-size:1.4rem;">
+              <span>
+                <i class="fa fa-phone"></i>
+              </span>
+                服务热线：
+                <div class="info">4008-062-822</div>
+                <div style="display:inline-block;margin-left:15px;font-size:1.2rem;">工作时间：周一至周五 9:00-20:00</div>
+              </li>
+              <li class="right-content" style="font-size:1.4rem;">
+              <span>
+                <i class="fa fa-envelope"></i>
+              </span>
+                投诉建议：
+                <div class="info"><a class="mailto" role="button" href="mailto:user@cnbexpress.com">user@cnbexpress.com</a></div>
+              </li>
+              <li class="right-content" style="font-size:1.4rem;">
+              <span>
+                <i class="fa fa-map-marker fa-lg"></i>
+              </span>
+                公司地址：
+                <div class="info">上海市延安西路726号华敏翰尊12J座</div>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-xs-6">
+            <div class="col-xs-3">
+              <ul class="module list-unstyled" style="width:100%;">
+                <li class="title"><a bref-reload="true" bref="helpcentre.aboutus({code:'intro'})">关于我们</a></li>
+                <li class="content"><a bref-reload="true" bref="helpcentre.aboutus({code:'intro'})">平台介绍</a></li>
+                <li class="content"><a bref-reload="true" bref="helpcentre.aboutus({code:'dic'})">免责声明</a></li>
+                <li class="content"><a href="https://dn-cnbexpress-public.qbox.me/cnb-manual.rar?attname=CNB Express 产品使用手册.rar">使用手册</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-3">
+              <ul class="module list-unstyled" style="width:100%;">
+                <li class="title"><a bref-reload="true" bref="helpcentre.index">帮助中心</a></li>
+                <li class="content"><a role="button" ng-click="$root.openKefu()">在线咨询</a></li>
+                <li class="content"><a bref-reload="true" bref="helpcentre.suggestion">投诉建议</a></li>
+                <li class="content"><a bref-reload="true" bref="helpcentre.index">热门问题</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-3">
+              <ul class="module list-unstyled" style="width:100%;">
+                <li class="title"><a bref-reload="true" bref="hrService.index">HR服务</a></li>
+                <li class="content"><a bref-reload="true" bref="hrService.detail.rpo">人力资源外包</a></li>
+                <li class="content"><a bref-reload="true" bref="hrService.detail.hhs">高端猎头服务</a></li>
+                <li class="content"><a bref-reload="true" bref="hrService.detail.hpo">招聘流程外包</a></li>
+                <li class="content"><a bref-reload="true" bref="hrService.detail.emo">设备维护外包</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-3">
+              <ul class="module list-unstyled" style="width:100%;">
+                <li class="title"><a bref-reload="true" bref="mall.index">福利商城</a></li>
+                <li class="content"><a bref-reload="true" bref="mall.module({code:'examination'})">搜体检中心</a></li>
+                <li class="content"><a bref-reload="true" bref="mall.module({code:'benifits'})">福利超市</a></li>
+                <li class="content"><a bref-reload="true" bref="mall.module({code:'cnbpoints'})">积分超市</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+        </section>
+        <section class="bottom">
+        <div class="container" style="width: 1000px;padding: 0">
+        <div class="row links">
+          <div class="text-left address fre">
+            <span>友情链接</span>
+          </div>
+          <div class="text-left address" style="margin-left: 77px">
+            <div class="text-left">
+              <a href="http://www.mohrss.gov.cn/" target="_blank">人力资源和社会保障部</a>
+              <a href="http://www.mps.gov.cn/n2254996/index.html" target="_blank">公安部出入境管理局</a>
+              <a href="http://www.chinatax.gov.cn/" target="_blank">国家税务总局</a>
+              <a href="http://www.chinajob.gov.cn/" target="_blank">中国就业网</a>
+              <a href="http://www.stats.gov.cn/" target="_blank">国家统计局</a>
+            </div>
+            <div class="text-left">
+              <a href="http://www.bjrbj.gov.cn" target="_blank">北京人社局</a>
+              <a href="http://www.tax861.gov.cn/" target="_blank">北京地税局</a>
+              <a href="http://www.12333sh.gov.cn/" target="_blank">上海人社局</a>
+              <a href="http://www.tax.sh.gov.cn/" target="_blank">上海地税局</a>
+              <a href="http://www.hrssgz.gov.cn/" target="_blank">广州人社局</a>
+              <a href="http://www.gzds.gov.cn/" target="_blank">广州地税局</a>
+              <a href="http://www.szhrss.gov.cn/" target="_blank">深圳人社局</a>
+              <a href="http://www.szds.gov.cn/" target="_blank">深圳地税局</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 text-center copyright">
+            <span>Copyright © 2016</span>
+            <span>上海利唐信息科技有限公司  版权所有</span>
+            <span>沪ICP备16020917号</span>
+          </div>
+        </div>
+        </div>
+        </section>
+  	</section>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/swiper-3.4.0.jquery.min.js"></script>
+<script src="js/main.js"></script>
+</html>
